@@ -1,0 +1,17 @@
+# ============================================================
+#  Model configuration
+# ============================================================
+groq:
+  default_model: "llama-3.3-70b-versatile"
+  fallback_model: "gemma2-9b-it"
+  max_tokens: 1024
+  temperature: 0.3       # lower = more factual output
+
+search:
+  max_results: 3         # sources fetched per query
+  min_text_length: 200   # skip articles shorter than this
+
+pipeline:
+  use_arxiv: true
+  use_wiki: true
+  use_web: true          # DuckDuckGo fallback

@@ -1,0 +1,10 @@
+Summarise the following text in exactly 5 bullet points.
+
+Rules:
+- Each bullet must be one clear, informative sentence.
+- Focus on the most important facts, findings, or concepts.
+- Do not include opinions — only what the text says.
+- Write in plain English, avoid jargon where possible.
+
+Text to summarise:
+{text}

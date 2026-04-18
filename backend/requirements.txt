@@ -1,0 +1,15 @@
+# Core
+groq
+python-dotenv==1.0.1
+requests==2.32.3
+beautifulsoup4==4.12.3
+lxml==5.2.2
+feedparser==6.0.11
+
+# API layer
+fastapi==0.111.1
+uvicorn==0.30.1
+httpx
+
+# Dev / testing
+pytest==8.2.2

@@ -1,0 +1,23 @@
+Write a structured research report on the topic: {topic}
+
+Use the summarised sources below as your evidence base.
+Cite sources using their numbered reference (e.g. [1], [2]).
+
+Report structure:
+## Introduction
+Brief context and why this topic matters.
+
+## Key Findings
+The most important facts, grouped by theme.
+
+## Analysis & Insights
+What patterns, implications, or connections emerge.
+
+## Conclusion
+A concise synthesis in 3-5 sentences.
+
+## References
+List each source as: [N] Title — URL
+
+Summarised sources:
+{summaries}
