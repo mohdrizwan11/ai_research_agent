@@ -111,6 +111,8 @@ ai_research_agent/
 
 This project is open-source and available under the MIT License.
 
+### If this project helped you, consider giving it a star ⭐ to support the work and future improvements.
+
 ## Contributor
 
 - **Gmail:** [kmohammadrizwan11@gmail.com](mailto:kmohammadrizwan11@gmail.com)
