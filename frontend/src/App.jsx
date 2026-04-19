@@ -166,7 +166,7 @@ function App() {
     }, deep ? 1500 : 1000);
 
     try {
-      const response = await fetch(`http://localhost:8000/research`, {
+      const response = await fetch(`https://ai-research-agent-1-3254.onrender.com/research`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -216,7 +216,7 @@ function App() {
     setFollowUpLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:8000/chat`, {
+      const response = await fetch(`https://ai-research-agent-1-3254.onrender.com/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
