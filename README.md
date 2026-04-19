@@ -106,3 +106,17 @@ ai_research_agent/
 | arXiv      | Academic paper abstracts    | No       |
 | DuckDuckGo | Web search snippets         | No       |
 | Groq       | LLM (llama-3.3-70b-versatile)| Yes (free)|
+
+## License
+
+This project is open-source and available under the MIT License.
+
+## Contributor
+
+- **Gmail:** [kmohammadrizwan11@gmail.com](mailto:kmohammadrizwan11@gmail.com)
+- **LinkedIn:** [https://www.linkedin.com/in/mohdrizwan11/](https://www.linkedin.com/in/mohdrizwan11/)
+- **GitHub:** [https://github.com/mohdrizwan11](https://github.com/mohdrizwan11)
+
+## Open to Collaborations
+
+I am always open to collaborations! If you're interested in working together or have any questions, feel free to drop me a contact message via Gmail or LinkedIn.
