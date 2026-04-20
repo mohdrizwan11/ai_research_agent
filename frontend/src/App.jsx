@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { jsPDF } from 'jspdf';
 import { 
   MessageSquarePlus, Search, Edit2, Trash2, Pin, Star,
-  Download, Copy, RotateCcw, Plus, Zap, AlignLeft, BookOpen, MessageCircle 
+  Download, Copy, RotateCcw, Plus, Zap, AlignLeft, BookOpen, MessageCircle, Menu, X 
 } from 'lucide-react';
 import './index.css';
 
@@ -24,6 +24,19 @@ function App() {
   const [currentChatId, setCurrentChatId] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [theme, setTheme] = useState('dark');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsSidebarOpen(false);
+      } else {
+        setIsSidebarOpen(true);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // --- Current Chat State ---
   const [topic, setTopic] = useState('');
@@ -329,12 +342,21 @@ function App() {
 
   return (
     <>
-      <div className="sidebar">
-        <button className="new-chat-btn" onClick={handleNewChat}>
-          <MessageSquarePlus size={16} /> New Research
-        </button>
+      <div 
+        className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} 
+        onClick={() => setIsSidebarOpen(false)}
+      ></div>
+      <div className={`sidebar ${!isSidebarOpen ? 'collapsed' : ''}`}>
+        <div className="sidebar-top-actions">
+          <button className="new-chat-btn" onClick={handleNewChat} style={{ flex: 1, marginBottom: 0 }}>
+            <MessageSquarePlus size={16} /> New Research
+          </button>
+          <button className="mobile-close-btn" onClick={() => setIsSidebarOpen(false)}>
+            <X size={20} />
+          </button>
+        </div>
         
-        <div className="search-container">
+        <div className="search-container" style={{ marginTop: '16px' }}>
           <Search size={14} className="search-icon" />
           <input 
             type="text" 
@@ -383,6 +405,11 @@ function App() {
       </div>
 
       <div className="main-content">
+        <div className="main-top-bar">
+          <button className="toggle-sidebar-btn" onClick={() => setIsSidebarOpen(!isSidebarOpen)} title="Toggle Sidebar">
+            <Menu size={20} />
+          </button>
+        </div>
         <div className="wrap">
           <div className="hd">
             <div className="logo">[ Research<em>AI</em> ]</div>

@@ -64,6 +64,108 @@ body {
   padding: 16px;
   height: 100vh;
   flex-shrink: 0;
+  transition: margin-left 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+}
+
+@media (min-width: 769px) {
+  .sidebar.collapsed {
+    margin-left: -260px;
+  }
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+.sidebar-top-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.mobile-close-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-color);
+  padding: 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+}
+
+.toggle-sidebar-btn {
+  background: transparent;
+  border: 1px solid var(--border-secondary);
+  border-radius: 8px;
+  color: var(--text-color);
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.toggle-sidebar-btn:hover {
+  background-color: var(--surface-secondary);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    margin-left: 0 !important;
+  }
+  
+  .sidebar:not(.collapsed) {
+    transform: translateX(0);
+  }
+  
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sidebar-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .mobile-close-btn {
+    display: flex;
+  }
+  
+  .main-content {
+    padding: 16px 16px 64px !important;
+  }
+  
+  .logo { font-size: 20px !important; }
+  .logo-sub { font-size: 9px !important; letter-spacing: 2px !important; }
+  .sta { font-size: 14px !important; min-height: 48px !important; }
+  .sr { flex-direction: column !important; align-items: stretch !important; }
+  .lc { justify-content: space-between !important; margin-bottom: 8px; }
+  .gb { width: 100% !important; }
 }
 
 .new-chat-btn {
